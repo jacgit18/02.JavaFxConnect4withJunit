@@ -1,0 +1,87 @@
+
+.title-label, .custom-label {
+   -fx-font-size: 70px;
+   -fx-alignment: center;
+   -fx-text-fill: #e8d102;
+   -fx-border-color: black;
+   
+}
+
+.name {
+   -fx-text-fill: #e8d102;
+   
+}
+
+.gamecolor{
+   -fx-background-color: #1261B7;
+   
+}
+
+.gamecolor1{
+   -fx-background-color: #000000;
+   -fx-border-color: #e8d102;
+   
+}
+
+.border{
+	-fx-border-color: black;
+    -fx-border-width: 5px 3px 5px 3px;
+	-fx-border-style: solid;
+	
+}
+
+.custom-label, .winner {
+   -fx-alignment: center;
+   -fx-border-color:#1261B7;
+   -fx-font-size: 60px;
+   
+   -fx-min-width: 90px;
+   -fx-min-height: 90px;
+    
+   -fx-border-radius:60;
+   
+   -fx-background-radius:60;
+   -fx-background-color: rgb(255,255,255); 
+   -fx-text-fill:white;
+   
+   
+}
+
+.X{
+   -fx-background-color:yellow;
+   -fx-text-fill:yellow;
+
+}
+
+.O{
+   -fx-background-color:red;
+   -fx-text-fill:red;
+
+}
+   
+     
+.winner {	
+	-fx-text-fill:red;
+}
+
+.possibleMove {	
+	-fx-text-fill:blue;
+}
+#GPane{
+	-fx-pref-height:400px;
+	-fx-background-radius: 10px;
+	-fx-hgap:90px;
+	-fx-vgap:90px;
+	-fx-alignment: center;
+	
+}
+
+#MainPane{
+	   -fx-background-color: #1261B7;
+	   -fx-border-color: black;
+       -fx-border-width: 3px 0px 5px 0px;
+	   -fx-border-style: solid;
+	   -fx-alignment: center;
+	   
+
+}
