@@ -1,23 +1,19 @@
 package edu.citytech.gamesplus;
 
 import java.net.URL;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 import java.util.ResourceBundle;
 
 import edu.citytech.service.Connect4Service;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 
 public class GamesPlusController implements Initializable {
 
@@ -34,11 +30,7 @@ public class GamesPlusController implements Initializable {
     @FXML
     private Label lbl_Message; 
 
-    @FXML
-    void checkFloatOption(ActionEvent event) {
- 
-    }
-    
+  
     
     @Override
 	public void initialize(URL url, ResourceBundle resource) {
@@ -61,11 +53,7 @@ public class GamesPlusController implements Initializable {
     
 	private void ClickedEvent(MouseEvent e) {
 		Label label = (Label)e.getSource();
-//		if(! label.getText().equals("?")){
-//			lbl_Message.setText("Invalid move as of " + new Date());
-//		
-//		return;
-//	}
+
 		
 		if (label.getTextFill() != Color.WHITE) {
 			lbl_Message.setText("Not your turn");
@@ -76,8 +64,14 @@ public class GamesPlusController implements Initializable {
 	String xOrO = "";
 	if (isX) {
 		xOrO = "X";
+
+		
+//		 Label msg = new Label("GamesPlus.css");
+//	     msg.setStyle("-fx-background-color: blue; ");
+
 	} else {
 		xOrO = "O";
+
 	}
 	isX =!isX;
 	label.setText(xOrO);
@@ -86,28 +80,35 @@ public class GamesPlusController implements Initializable {
 	
 	for (int i = 0; i < labels.length; i++) {
 		moves[i] = labels[i].getText();
+
 	}
+
 	
 	
-	
-	int cellNumber = (int) label.getUserData();
+	int columnNumber = (int) label.getUserData();
 	String newMove = label.getText();
-	moves[cellNumber] = "?";
+	moves[columnNumber] = "?";
 	label.setText("?");
 	
-	int nextMove = Connect4Service.getValidCellMoves(moves, cellNumber);
+	int nextMove = Connect4Service.getValidCellMoves(moves, columnNumber);
 	
 	labels[nextMove].setText(newMove);
 	labels[nextMove].getStyleClass().add(xOrO);
 	
-	lbl_Message.setText("Current is " + cellNumber + " next valid move is " + nextMove + " clicked on " + new Date());
 
 
-//	if (moves.length != 0) {
+	
+	lbl_Message.setText("Current is " + columnNumber + " next valid move is " + nextMove + " clicked on " + new Date());
+
+	
+	
+	int [] winner = Connect4Service.getWinner(moves);
+
+//	if (winner = true) {
 //		lbl_Message.setText("You are the winner!");
-//		GPane.getChildren().forEach(x -> {
-//			Label lbl = (Label) x;
-//			lbl.setDisable(true);
+//	GPane.getChildren().forEach(x -> {
+//		Label lbl = (Label) x;;
+//		lbl.setDisable(true);
 //		});
 //	}
 	
