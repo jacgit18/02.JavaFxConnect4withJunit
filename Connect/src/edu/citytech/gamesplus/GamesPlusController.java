@@ -107,7 +107,7 @@ public class GamesPlusController implements Initializable {
 //	if (winner = true) {
 //		lbl_Message.setText("You are the winner!");
 //	GPane.getChildren().forEach(x -> {
-//		Label lbl = (Label) x;;
+//		Label lbl = (Label) x;
 //		lbl.setDisable(true);
 //		});
 //	}
