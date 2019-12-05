@@ -30,7 +30,7 @@ public class GamesPlusController implements Initializable {
     @FXML
     private Label lbl_Message; 
 
-  
+
     
     @Override
 	public void initialize(URL url, ResourceBundle resource) {
@@ -95,15 +95,22 @@ public class GamesPlusController implements Initializable {
 	labels[nextMove].setText(newMove);
 	labels[nextMove].getStyleClass().add(xOrO);
 	
+    int [] winner = Connect4Service.getWinner(moves);
+	
+  
+    
+    
+	if (winner.equals(winner)) {
+		lbl_Message.setText("Winner was found");
+	}
 
 
 	
 	lbl_Message.setText("Current is " + columnNumber + " next valid move is " + nextMove + " clicked on " + new Date());
 
-	
-	
-	int [] winner = Connect4Service.getWinner(moves);
 
+	
+	
 //	if (winner = true) {
 //		lbl_Message.setText("You are the winner!");
 //	GPane.getChildren().forEach(x -> {
