@@ -90,7 +90,10 @@ public class GamesPlusController implements Initializable {
 		labels[nextMove].setText(newMove);
 		labels[nextMove].getStyleClass().add(xOrO);
 
-
+                lbl_Message
+		.setText("Current is " + columnNumber + 
+				" next valid move is " + nextMove + 
+				" clicked on " + new Date());
 		
 		if (winner.length == 4) {
 			lbl_Message.setText("Winner");
@@ -101,9 +104,6 @@ public class GamesPlusController implements Initializable {
 
 		lbl_Message.setText("Game done" );
 
-		
-//		lbl_Message.setText(
-//				"Current is " + columnNumber + " next valid move is " + nextMove + " clicked on " + new Date());
 	}
 
 
