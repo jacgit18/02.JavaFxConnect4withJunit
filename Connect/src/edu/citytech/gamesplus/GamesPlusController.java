@@ -93,13 +93,13 @@ public class GamesPlusController implements Initializable {
 
 		
 		if (winner.length == 4) {
-			lbl_Message.setText("Winner was found");
+			lbl_Message.setText("Winner");
 			win = 0;
 		}
 		
 	} else {
 
-		lbl_Message.setText("Game has already been won." );
+		lbl_Message.setText("Game done" );
 
 		
 //		lbl_Message.setText(
