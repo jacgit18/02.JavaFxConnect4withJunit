@@ -34,7 +34,7 @@ public class GamesPlusController implements Initializable {
 	private boolean isX = false;
 
 	int win = 1;
-
+// array index 3 look AT rest of code
 	@Override
 	public void initialize(URL url, ResourceBundle resource) {
 
